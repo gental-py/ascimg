@@ -1,0 +1,3 @@
+[submodule "API"]
+	path = API
+	url = https://github.com/gental-py/ascimg_api
