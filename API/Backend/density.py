@@ -5,7 +5,7 @@ class DensityScale:
         self.text_scale = scale
         self.range_scale = self.build_scale()
         
-    def build_scale(self) -> dict[range, str]:
+    def build_scale(self):
         step = round(256/len(self.text_scale))+1
         range_scale = {}
         
