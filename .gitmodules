@@ -4,3 +4,6 @@
 [submodule "WEB"]
 	path = WEB
 	url = https://github.com/gental-py/ascimg_web
+[submodule "CLI"]
+	path = CLI
+	url = https://github.com/gental-py/ascimg_cli
