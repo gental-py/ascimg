@@ -1,7 +1,6 @@
 [submodule "API"]
 	path = API
 	url = https://github.com/gental-py/ascimg_api
-	branch = main
 [submodule "WEB"]
 	path = WEB
 	url = https://github.com/gental-py/ascimg_web
