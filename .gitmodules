@@ -1,9 +1,0 @@
-[submodule "API"]
-	path = API
-	url = https://github.com/gental-py/ascimg_api
-[submodule "WEB"]
-	path = WEB
-	url = https://github.com/gental-py/ascimg_web
-[submodule "CLI"]
-	path = CLI
-	url = https://github.com/gental-py/ascimg_cli
