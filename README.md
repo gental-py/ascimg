@@ -8,7 +8,7 @@ This project is split into 3 parts: **CLI**, **API** and **WEB** versions. All o
 
 ## 💻 How to use?
 * If you want to use user-friendly interface, checkout this project's [website](https://ascimg.ct8.pl/).
-* There is also a **CLI** version of this project that you cane easily download by following the instructions on it's repo.
+* There is also a **CLI** version of this project that you can easily download by following the instructions on it's repo.
 
 ## 🧠 Backend.
 
