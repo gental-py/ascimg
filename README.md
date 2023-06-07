@@ -12,7 +12,7 @@ This project is split into 3 parts: **CLI**, **API** and **WEB** versions. All o
 
 ## 🧠 Backend.
 
-Each version has it's own `/Backend` directory that contains three (*CLI has fourth*) `.py` files. The are mostly the same with just minor changes made because of slightly different expected outcome.
+Backend is located in `API`'s repository. 
 
 * `settings.py`:  
   Contains settings object definition with attribute for each setting with assigned default value. It also has method to create instance from an Iterable object that contains exactly 8 values.  
