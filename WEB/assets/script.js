@@ -6,6 +6,7 @@
 
 const API_CONVERT = "https://api_ascimg-1-u4994017.deta.app/"
 // const API_CONVERT = "http://127.0.0.1:8000/convert/"
+let waiting_for_resposne = false
 let image_buffer = null
 console.log("Using API endpoint: ", API_CONVERT)
 
@@ -134,6 +135,12 @@ function updateImage() {
 }
 
 function generateImage() {
+    if (waiting_for_resposne) {
+        console.error("There is already pending request...")
+        return
+    }
+
+    waiting_for_resposne = true
     image = image_buffer
     if (image === null) { 
         console.error("Cannot generate - blank image buffer.")
@@ -159,10 +166,12 @@ function generateImage() {
                 ascii = data.ascii.replaceAll("<space>", "&nbsp;")
                 displayAscii(ascii, data.time)
             }
+            waiting_for_resposne = false
         })
         .catch(error => {
             console.error(error);
             displayAscii("There was an error with JS... <br>" + error, -1)
+            waiting_for_resposne = false
         });
 }
 
