@@ -1,0 +1,4 @@
+click
+pyperclip
+imageio[ffmpeg]
+pillow

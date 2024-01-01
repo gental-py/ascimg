@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ascimg_</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo" id="ascimg-logo">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <div class="header-text">
+            ascimg<span class="blink">_</span>
+        </div>
+        <a href="" id="active-site">
+            <span class="header-bracket">/</span>converter
+        </a>
+        <a href="https://github.com/gental-py/ascimg" target="_blank">
+            <span class="header-bracket">/</span>github
+        </a>
+        <a href="https://github.com/gental-py/" target="_blank">
+            <span class="header-bracket">/</span>author
+        </a>
+    </div>
+
+    <div class="card-container">
+        <div class="card" id="settings_card">
+            <div class="card-wrapper">
+                <div class="card-title">
+                    Settings
+                    <button class="apply-settings settings-btn" onclick="generateImage()">
+                        <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                            <g id="Interface / Check_All_Big">
+                                <path id="Vector"
+                                    d="M7 12L11.9497 16.9497L22.5572 6.34326M2.0498 12.0503L6.99955 17M17.606 6.39355L12.3027 11.6969"
+                                    stroke="#e3e3e3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                    </button>
+
+                    <button class="reset-button settings-btn" onclick="resetToDefault()">
+                        <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                            <g id="Edit / Redo">
+                                <path id="Vector"
+                                    d="M13.9998 8H18.9998V3M18.7091 16.3569C17.7772 17.7918 16.4099 18.8902 14.8079 19.4907C13.2059 20.0913 11.4534 20.1624 9.80791 19.6937C8.16246 19.225 6.71091 18.2413 5.66582 16.8867C4.62073 15.5321 4.03759 13.878 4.00176 12.1675C3.96593 10.4569 4.47903 8.78001 5.46648 7.38281C6.45392 5.98561 7.86334 4.942 9.48772 4.40479C11.1121 3.86757 12.8661 3.86499 14.4919 4.39795C16.1177 4.93091 17.5298 5.97095 18.5209 7.36556"
+                                    stroke="#e3e3e3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <hr class="card-line">
+                <br>
+                <div class="card-input-label">
+                    <label for="image-scale">Image Scale:</label>
+                    <span id="image-scale-value" class="card-input-value">0.5</span>
+                </div>
+                <input type="range" id="image-scale" class="card-input-range" min="0.1" max="2" step="0.1" value="0.5">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="contrast-factor">Contrast:</label>
+                    <span id="contrast-factor-value" class="card-input-value">1.5</span>
+                </div>
+                <input type="range" id="contrast-factor" class="card-input-range" min="0" max="4" step="0.1" value="1.5">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="brightness-factor">Brightness:</label>
+                    <span id="brightness-factor-value" class="card-input-value">1.0</span>
+                </div>
+                <input type="range" id="brightness-factor" class="card-input-range" min="0" max="4" step="0.1" value="1.0">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="sharpness-factor">Sharpness:</label>
+                    <span id="sharpness-factor-value" class="card-input-value">1.0</span>
+                </div>
+                <input type="range" id="sharpness-factor" class="card-input-range" min="0" max="4" step="0.1" value="1.0">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="solarize-factor">Solarize:</label>
+                    <span id="solarize-factor-value" class="card-input-value">0</span>
+                </div>
+                <input type="range" id="solarize-factor" class="card-input-range" min="0" max="128" step="1" value="0">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="invert-checkbox">Invertion:</label>
+                    <span id="invert-checkbox-value" class="card-input-value">Disabled</span>
+                </div>
+                <input type="checkbox" id="invert-checkbox" class="card-input-selection">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="mirror-checkbox">Mirror:</label>
+                    <span id="mirror-checkbox-value" class="card-input-value">Disabled</span>
+                </div>
+                <input type="checkbox" id="mirror-checkbox" class="card-input-selection">
+                <br>
+
+                <div class="card-input-label">
+                    <label for="density-scale">Density Scale:</label>
+                </div>
+                <select id="density-scale" class="card-input-selection">
+                    <option value="short">Short</option>
+                    <option value="numeric">Numeric</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <input type="text" id="custom-density">
+            </div>
+        </div>
+        
+        <div class="vertical-container">
+            <div class="card" id="upload_card">
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;" id="upload_image_icon">
+                    <svg width="100px" height="100px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Edit / Add_Plus_Square">
+                            <path id="Vector"
+                                d="M8 12H12M12 12H16M12 12V16M12 12V8M4 16.8002V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H16.8002C17.9203 4 18.4801 4 18.9079 4.21799C19.2842 4.40973 19.5905 4.71547 19.7822 5.0918C20.0002 5.51962 20.0002 6.07967 20.0002 7.19978V16.7998C20.0002 17.9199 20.0002 18.48 19.7822 18.9078C19.5905 19.2841 19.2842 19.5905 18.9079 19.7822C18.4805 20 17.9215 20 16.8036 20H7.19691C6.07899 20 5.5192 20 5.0918 19.7822C4.71547 19.5905 4.40973 19.2842 4.21799 18.9079C4 18.4801 4 17.9203 4 16.8002Z"
+                                stroke="#b9b9b9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                    <p id="upload_inform">Upload image...</p>
+                </div>
+
+                <img id="uploaded_img">
+            </div>
+
+            <div class="card" id="generate-card">
+                <div class="card-wrapper">
+                    <input type="submit" onclick="generateImage()" id="generate-btn" value="/generate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="button" href="#output_popup" id="open_popup"></a>
+    <div id="output_popup" class="overlay">
+        <div class="popup">
+            <h2 id="output_header"></h2>
+            <button class="output_control" id="copy_output" onclick="copyOutputContent()">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Edit / Copy">
+                        <path id="Vector"
+                            d="M9 9V6.2002C9 5.08009 9 4.51962 9.21799 4.0918C9.40973 3.71547 9.71547 3.40973 10.0918 3.21799C10.5196 3 11.0801 3 12.2002 3H17.8002C18.9203 3 19.4801 3 19.9079 3.21799C20.2842 3.40973 20.5905 3.71547 20.7822 4.0918C21.0002 4.51962 21.0002 5.07967 21.0002 6.19978V11.7998C21.0002 12.9199 21.0002 13.48 20.7822 13.9078C20.5905 14.2841 20.2839 14.5905 19.9076 14.7822C19.4802 15 18.921 15 17.8031 15H15M9 9H6.2002C5.08009 9 4.51962 9 4.0918 9.21799C3.71547 9.40973 3.40973 9.71547 3.21799 10.0918C3 10.5196 3 11.0801 3 12.2002V17.8002C3 18.9203 3 19.4801 3.21799 19.9079C3.40973 20.2842 3.71547 20.5905 4.0918 20.7822C4.5192 21 5.07899 21 6.19691 21H11.8036C12.9215 21 13.4805 21 13.9079 20.7822C14.2842 20.5905 14.5905 20.2839 14.7822 19.9076C15 19.4802 15 18.921 15 17.8031V15M9 9H11.8002C12.9203 9 13.4801 9 13.9079 9.21799C14.2842 9.40973 14.5905 9.71547 14.7822 10.0918C15 10.5192 15 11.079 15 12.1969L15 15"
+                            stroke="#b1b4b9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </button>
+            <button class="output_control" id="donwload_output" onclick="downloadOutputContent()">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Interface / Download">
+                        <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#b1b4b9" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </button>
+            <button class="output_control" id="output_fs_plus" onclick="outputBiggerContent()">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Interface / Magnifying_Glass_Plus">
+                        <path id="Vector"
+                            d="M7 10H10M10 10H13M10 10V7M10 10V13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                            stroke="#b1b4b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </button>
+            <button class="output_control" id="output_fs_minus" onclick="outputSmallerContent()">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Interface / Magnifying_Glass_Minus">
+                        <path id="Vector"
+                            d="M7 10H13M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+                            stroke="#b1b4b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg></button>
+            <hr id="popup-hr">
+            <a class="close" href="#">&times;</a>
+            <div class="content" id="output_content"></div>
+        </div>
+    </div>
+
+    <input accept="image/*" type="file" id="upload_input">
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
