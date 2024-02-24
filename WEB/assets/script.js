@@ -4,7 +4,7 @@
 // im happy enough with this result. 
 
 
-const API_CONVERT = "https://api_ascimg-1-u4994017.deta.app/"
+const API_CONVERT = "https://api_ascimg-1-u4994017.deta.app/convert/"
 // const API_CONVERT = "http://127.0.0.1:8000/convert/"
 let waiting_for_resposne = false
 let image_buffer = null

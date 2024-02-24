@@ -262,12 +262,13 @@ body {
     overflow: auto;
 }
 #output_content {
-    font-family: "Cascadia Code";
+    font-family: "IBM plex mono";
     color: var(--light-content);
     letter-spacing: 0px;
     line-height: 70%;
     font-size: 2px;
     user-select: text;
+    text-wrap: nowrap;
 }
 .output_control {
     border: transparent;
