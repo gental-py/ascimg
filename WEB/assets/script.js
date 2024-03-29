@@ -52,12 +52,13 @@ function copyOutputContent() {
     content = document.getElementById("output_content").innerText
     if (content == "" || content == undefined) { return }
 
-    try {
-        navigator.clipboard.writeText(content)
-    } catch (error) {
-        console.error("Failed to copy output")
-        alert("Failed to copy...")
-    }
+    const tempInput = document.createElement("textarea");
+    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+    tempInput.value = content
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
 }
 
 function downloadOutputContent() {
